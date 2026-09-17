@@ -4,18 +4,19 @@ import Image from 'next/image';
 export const AboutMe = () => {
   return (
     <Stack>
-      <div className="flex flex-col gap-8">
-        <div className="flex items-center gap-3 sm:gap-5">
+      <div className="flex flex-col gap-6">
+        <div className="flex items-center gap-3 sm:gap-4">
           <Image
-            src={'/cejas-0.png'}
+            src={'/pixel.png'}
             alt="Foto de perfil"
-            width={70}
-            height={70}
+            width={80}
+            height={80}
+            // className='grayscale'
           />
           <div>
             <h1
-              className="font-serif text-lg font-bold text-(--home-foreground)
-                uppercase sm:text-2xl"
+              className="font-serif text-lg font-bold text-(--foreground)
+                uppercase sm:text-2xl "
             >
               marco muralles
             </h1>

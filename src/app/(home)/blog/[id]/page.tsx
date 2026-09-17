@@ -26,6 +26,8 @@ const BlogPageId = async ({ params }: BlogIdPage) => {
       >
         <GoArrowLeft size={15} /> regresar
       </Link>
+
+      
       <div className="flex-1">
         <BlogPostContent post={resp.data} />
       </div>
