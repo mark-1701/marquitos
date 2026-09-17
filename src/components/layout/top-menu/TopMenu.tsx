@@ -13,7 +13,7 @@ export const TopMenu = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="flex h-6 items-center justify-between">
       <SocialLinks />
       <ul className="flex justify-end gap-3">
         <li>

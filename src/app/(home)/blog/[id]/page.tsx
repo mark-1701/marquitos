@@ -10,8 +10,6 @@ type BlogIdPage = {
   };
 };
 
-// ! elimina este comentario
-
 const BlogPageId = async ({ params }: BlogIdPage) => {
   const { id } = await params;
 
@@ -21,16 +19,23 @@ const BlogPageId = async ({ params }: BlogIdPage) => {
 
   return (
     <>
-      <Link
-        className="mb-8 flex items-center gap-1 text-(--foreground-600)
-          hover:cursor-pointer hover:underline"
-        href="/blog"
-      >
-        <GoArrowLeft size={15} /> regresar
-      </Link>
+      {/* top-menu = 1.5 */}
+      {/* blog-page = 3 rem */}
+      {/* margin-top-mobile = 1rem */}
+      {/* margin-top-desktop = 5rem */}
 
-      
-      <div className="flex-1">
+      {/* mobile = 1.5 + 3 + 1 */}
+      {/* desktop = 1.5 + 3 + 5 */}
+      <div
+        className="min-h-[calc(100dvh-5.5rem)] sm:min-h-[calc(100dvh-9.5rem)]"
+      >
+        <Link
+          className="mb-8 flex items-center gap-1 text-(--foreground-600)
+            hover:cursor-pointer hover:underline"
+          href="/blog"
+        >
+          <GoArrowLeft size={15} /> regresar
+        </Link>
         <BlogPostContent post={resp.data} />
       </div>
 
