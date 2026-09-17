@@ -10,6 +10,8 @@ type BlogIdPage = {
   };
 };
 
+// ! elimina este comentario
+
 const BlogPageId = async ({ params }: BlogIdPage) => {
   const { id } = await params;
 
