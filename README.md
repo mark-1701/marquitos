@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Guía de inicio (getting started)
 
-## Getting Started
+De momento esta en español en el futuro lo voy a traducir a inglés.
 
-First, run the development server:
+### Requisitos
+
+- Node `v24.11.1`
+- PostgreSQL
+- npm `v11.6.2`
+
+### 1. Clonar el repositorio
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd <NOMBRE_DEL_PROYECTO>
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 3. Configurar las variables de entorno
+
+```bash
+cp .env.example .env
+```
+
+### 4. Configurar PostgreSQL
+
+Puedes utilizar una instalación local de PostgreSQL o ejecutar la base de datos mediante Docker Compose.
+
+#### Opción A: PostgreSQL local
+
+Asegúrate de tener PostgreSQL ejecutándose y configura `DATABASE_URL` en `.env` con los datos de conexión correspondientes.
+
+#### Opción B: PostgreSQL docker
+
+Si prefieres no instalar PostgreSQL directamente en tu sistema, puedes utilizar el servicio incluido en docker-compose.yml.
+
+```bash
+docker compose up -d
+```
+
+Esto iniciará una instancia de PostgreSQL en el puerto `5433` del sistema host.
+
+Una vez iniciado el contenedor, configura `DATABASE_URL` para utilizar ese puerto.
+
+### 5. Ejecutar las migraciones de Prisma
+
+```bash
+npx prisma migrate dev
+```
+
+### 6. Iniciar el servidor de desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+La aplicación estará disponible en: `http://localhost:3000`
